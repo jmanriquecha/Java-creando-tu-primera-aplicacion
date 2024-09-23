@@ -42,7 +42,7 @@ public class JuegoAdivinacion {
             }
 
             if (intentosRealizados == intentosPermitidos) {
-                System.out.println("¡PERDISTE! Lo siento terminaste tús %d intentos permitidos".formatted(intentosPermitidos));
+                System.out.println("¡PERDISTE! Lo siento terminaste tús %d intentos permitidos, el número secreto era %d".formatted(intentosPermitidos, numeroAleatorio));
             }
 
             intentosRealizados++; // Incrementa intentos en 1
