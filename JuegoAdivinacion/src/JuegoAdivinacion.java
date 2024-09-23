@@ -22,26 +22,31 @@ public class JuegoAdivinacion {
         var intentosPermitidos = 5;
         var intentosRealizados = 1;
         var numeroUsuario = 0;
-        System.out.println(numeroAleatorio); // Imprimir número
 
-        while (intentosRealizados <= intentosPermitidos){
-            System.out.println("Ingrese un número entre %d y %d para adivinar el número secreto".formatted(min, max-1));
+        while (intentosRealizados <= intentosPermitidos) {
+            System.out.println("Ingrese un número entre %d y %d para adivinar el número secreto".formatted(min, max - 1));
             numeroUsuario = teclado.nextInt();
 
             // Validamos datos
-            if (numeroAleatorio == numeroUsuario){
+            if (numeroAleatorio == numeroUsuario) {
                 System.out.println("¡Genial Adivinaste! El número secreto es: "
                         + numeroAleatorio + ", Necesitaste " + intentosRealizados + " intentos");
                 break; // Rompe el bucle
             }
 
             // Mostramos información al usuario si el número ingresado es mayor ó menor que el número secreto
-            if (numeroUsuario > numeroAleatorio){
+            if (numeroUsuario > numeroAleatorio) {
                 System.out.println("El número Secreto es MENOR");
-            }else{
+            } else {
                 System.out.println("El número Secreto es MAYOR");
             }
+
+            if (intentosRealizados == intentosPermitidos) {
+                System.out.println("¡PERDISTE! Lo siento terminaste tús %d intentos permitidos".formatted(intentosPermitidos));
+            }
+
             intentosRealizados++; // Incrementa intentos en 1
         }
+        teclado.close();
     }
 }
